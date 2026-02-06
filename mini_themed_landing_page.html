@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Landing Page</title>
+
+    <style>
+     :root {
+    --page-bg: #f9fafb;
+    --text-color: #111827;
+
+    --navbar-bg: #e9e9f2;
+    --card-bg: #ffffff;
+    --button-bg: #6366f1;
+
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+
+    --base-font-size: 16px;
+    --heading-font-size: 32px;
+    --border-radius: 8px;
+}
+.dark-theme {
+    --page-bg: #0f172a;
+    --text-color: #f9fafb;
+
+    --navbar-bg: #1e293b;
+    --card-bg: #1f2937;
+    --button-bg: #818cf8;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: var(--base-font-size);
+    background-color: var(--page-bg);
+    color: var(--text-color);
+}
+
+.navbar {
+    padding: var(--space-md);
+    background-color: var(--navbar-bg);
+    show: flex;
+    align-items: center;
+}
+
+.hero {
+    padding: var(--space-lg);
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: var(--heading-font-size);
+}
+
+.button {
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+}
+
+.footer {
+    padding: var(--space-md);
+    text-align: center;
+    background-color: var(--navbar-bg);
+}
+
+        .dark-theme {
+            --background-color: #111827;
+            --text-color: #f9fafb;
+            --primary-color: #1f2933;
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --base-font-size: 14px;
+                --heading-font-size: 24px;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body class="dark-theme">
+
+<div class="navbar">
+    Mini Landing Page
+    <button id="themeToggle" class="button" style="float:right;">
+        Light Mode
+    </button>
+</div>
+
+    <div class="hero">
+        <h2>Welcome</h2>
+ <p>This page uses CSS variables defined in root</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Card One</h3>
+            <button class="button">View</button> 
+        </div>
+
+        <div class="card">
+            <h3>Card Two</h3>
+        </div>
+
+        <div class="card">
+            <h3>Card Three</h3>
+        </div>
+    </div>
+    <div class="footer">
+        Aditya Kumbhar
+    </div>
+<script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("dark-theme");
+
+        toggleBtn.textContent = body.classList.contains("dark-theme")
+            ? "Light Mode"
+            : "Dark Mode";
+    });
+</script>
+</body>
+</html>
